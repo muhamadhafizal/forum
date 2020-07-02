@@ -1,3 +1,17 @@
+<?php
+session_start();
+$username = session()->get('username');
+$password = session()->get('password');
+$name = session()->get('name');
+$role = session()->get('role');
+if (!isset($username)) {
+	echo '<script>window.location.replace("/")</script>;';
+}
+if ($role == 'admin') {
+	echo '<script>window.location.replace("admin")</script>;';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +57,7 @@
     <form class="form-inline my-2 my-lg-0">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        nickname
+        {{$name}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>

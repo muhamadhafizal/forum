@@ -35,21 +35,31 @@
 </style>
 </head>
 <body>
-
+<div class="row">
+	        	    <div class="col-sm-6">
+	        	        @if(Session::has('flash_message_delete'))
+	        	            <div class="alert alert-danger"><span class="fa fa-warning"></span><em> {!! session('flash_message_delete') !!}</em></div>
+	        	        @endif
+	        	    </div>
+	        	</div>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form method="POST" action="{{ route('storeuser') }}">
+    {{ csrf_field() }}
         <h2 class="text-center">Register</h2> 
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Name" required="required">
+            <input type="text" class="form-control" name="name"  placeholder="Name" required="required">
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email" required="required">
-        </div>      
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>    
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <input type="text" class="form-control" name="state" placeholder="State" required="required">
+        </div>  
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Register</button>

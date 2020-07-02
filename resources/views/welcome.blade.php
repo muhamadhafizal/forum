@@ -35,16 +35,28 @@
 </style>
 </head>
 <body>
-
+<div class="row">       
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            @if(Session::has('flash_message'))
+                                <div class="alert alert-success"><span class="fa fa-check"></span><em> {!! session('flash_message') !!}</em></div>
+                            @endif
+                            @if(Session::has('flash_message_delete'))
+	        	            <div class="alert alert-danger"><span class="fa fa-warning"></span><em> {!! session('flash_message_delete') !!}</em></div>
+	        	            @endif
+                        </div>
+                        <div class="col-sm-4"></div>
+                      
+                </div>
 <div class="login-form">
-    <form method="post" action="{{ route('indexforum') }}">
+    <form method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <input type="text" class="form-control" name="username" placeholder="Username" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
