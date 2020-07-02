@@ -103,7 +103,7 @@ class ForumController extends Controller
         $forum->save();
 
         \Session::flash('flash_message', 'successfully updated.');
-        return Redirect::route('listforum');
+        return Redirect::route('detailforum', compact('id'));
 
 
     }

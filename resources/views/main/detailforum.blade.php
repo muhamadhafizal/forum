@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">       
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+                            @if(Session::has('flash_message'))
+                                <div class="alert alert-success"><span class="fa fa-check"></span><em> {!! session('flash_message') !!}</em></div>
+                            @endif
+                        </div>
+                        <div class="col-sm-2"></div>
+                      
+                </div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
