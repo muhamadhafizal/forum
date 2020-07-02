@@ -6,11 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <p><b>ABC</b></p>
+                    <p><b>{{$forum->title}}</b></p>
                     <p>
-                        DEF
-                    </p>
+                        {{$forum->body}}
+                    </p>    
+                    <button type="button" class="btn btn-warning" onclick="window.location='{{ action('ForumController@edit', $forum->id) }}'">Edit</button>
                     <hr />
+                    
                     <h4>Display Comments</h4>
                     
                         <div class="display-comment">
