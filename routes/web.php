@@ -23,4 +23,5 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::post('/forum', 'ForumController@index')->name('indexforum');
 Route::get('/forum/add', 'ForumController@add')->name('addforum');
 Route::get('/forum/list', 'ForumController@list')->name('listforum');
+Route::get('/forum/detail', 'ForumController@detail')->name('detailforum');
 

@@ -18,4 +18,8 @@ class ForumController extends Controller
     public function list(){
         return view('/main/listforum');
     }
+
+    public function detail(){
+        return view('/main/detailforum');
+    }
 }
