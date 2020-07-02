@@ -5,6 +5,7 @@ use App\Forum;
 use Illuminate\Http\Request;
 use Redirect;
 use App\User;
+use App\Comment;
 
 class ForumController extends Controller
 {
@@ -70,7 +71,9 @@ class ForumController extends Controller
     public function detail($id){
 
         $forum = Forum::find($id);
-        return view('/main/detailforum', compact('forum'));
+
+        $listcomment = Comment::where('forumid',$id)->orderBy('created_at','DESC')->get();
+        return view('/main/detailforum', compact('forum','listcomment'));
     }
 
     public function destroy($id){

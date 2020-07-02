@@ -33,3 +33,7 @@ Route::post('/forum/update/{id}', 'ForumController@update')->name('updateforum')
 Route::get('/forum/detail/{id}', 'ForumController@detail')->name('detailforum');
 Route::get('/forum/delete/{id}', 'ForumController@destroy');
 
+//comment
+Route::post('/comment/add', 'CommentController@store')->name('addcomment');
+Route::get('/comment/delete/{id}', 'CommentController@destroy');
+
