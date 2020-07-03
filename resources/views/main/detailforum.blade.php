@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="display-comment">
-                                    <strong>{{$data->content}}</strong>
+                                    <p>{{$data->content}}</p>
                                 </div>
                             </div>
                             <div class="col-2">

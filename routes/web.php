@@ -20,6 +20,9 @@ Route::get('/register', 'LoginController@register')->name('registeruser');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::post('/login', 'LoginController@login')->name('login');
 
+Route::get('login/google', 'LoginController@redirectToProvider');
+Route::get('login/google/callback', 'LoginController@handleProviderCallback');
+
 //user
 Route::post('user/add', 'UserController@store')->name('storeuser');
 
